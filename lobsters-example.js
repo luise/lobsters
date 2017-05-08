@@ -16,5 +16,3 @@ deployment.deploy(baseMachine.asWorker());
 // Currently, SQL is only accessible from other containers in the cluster,
 // which limits the risk of this.
 lobsters.Deploy(deployment, "mysqlRootPassword");
-
-

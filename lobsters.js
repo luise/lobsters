@@ -10,7 +10,7 @@ exports.Deploy = function(deployment, sqlRootPassword) {
     sqlContainer.setEnv("MYSQL_ROOT_PASSWORD", sqlRootPassword);
 
     var sqlService = new Service("sql", [sqlContainer]);
-    
+
     // Create a container for lobste.rs and configure it.
     var lobstersContainer = new Container("quilt/lobsters");
 
@@ -32,4 +32,3 @@ exports.Deploy = function(deployment, sqlRootPassword) {
     deployment.deploy(sqlService);
     deployment.deploy(lobstersService);
 }
-
