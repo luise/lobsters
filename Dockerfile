@@ -2,8 +2,8 @@
 # automatically inherits the Ruby installation defined in that image.
 FROM ruby:2.3.1
 
-# Install NodeJS, which is required by lobste.rs.
-RUN apt-get update && apt-get install nodejs -y
+# Install NodeJS and cmake, which are required by lobste.rs.
+RUN apt-get update && apt-get install nodejs cmake -y
 
 # Download and build the lobste.rs code.
 RUN git clone git://github.com/jcs/lobsters.git
