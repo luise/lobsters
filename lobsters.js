@@ -1,6 +1,8 @@
 // Contains functionality to deploy Lobsters. See lobsters-example.js for
 // an example of how to use this file.
 
+const {Container, Service, publicInternet} = require("@quilt/quilt");
+
 exports.Deploy = function(deployment, sqlRootPassword) {
     // Create a container for mysql.
     var sqlContainer = new Container("mysql:5.6.32");

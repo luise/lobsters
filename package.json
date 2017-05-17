@@ -1,3 +1,9 @@
 {
-    "main": "./lobsters.js"
+  "name": "@quilt/lobsters",
+  "version": "0.0.1",
+  "main": "./lobsters.js",
+  "license": "MIT",
+  "dependencies": {
+    "@quilt/quilt": "quilt/quilt"
+  }
 }

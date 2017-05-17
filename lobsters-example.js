@@ -1,7 +1,8 @@
 // This is an example of how to use the Lobsters spec to deploy
 // Lobsters to a single Amazon instance.
 
-var lobsters = require("github.com/quilt/lobsters")
+const {createDeployment, Machine} = require("@quilt/quilt");
+var lobsters = require("./lobsters.js")
 
 var deployment = createDeployment();
 // To use this example, change this to your RSA public key.
