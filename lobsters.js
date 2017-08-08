@@ -25,10 +25,10 @@ exports.deploy = function deploy(deployment, sqlRootPassword) {
   const lobstersService = new Service('lobsters', [lobstersContainer]);
 
   // Allow inbound connections to SQL at 3306 (the default SQL port).
-  lobstersService.connect(3306, sqlService);
+  sqlService.allowFrom(lobstersService, 3306);
 
   // Allow inbound connections to the lobsters UI.
-  publicInternet.connect(3000, lobstersService);
+  lobstersService.allowFrom(publicInternet, 3000);
 
   // Deploy lobste.rs and mysql using the given deployment object.
   deployment.deploy(sqlService);
