@@ -15,4 +15,4 @@ bin/rake db:seed
 # Run the rails server, and tell it to listen on 0.0.0.0 so that it will accept
 # incoming connections from all IPs associated with tme machine and not just
 # localhost.
-rails server -b0.0.0.0
+rails server -b 0.0.0.0
