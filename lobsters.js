@@ -30,6 +30,6 @@ exports.deploy = function deploy(deployment, sqlRootPassword) {
   lobsters.allowFrom(publicInternet, 3000);
 
   // Deploy lobste.rs and mysql using the given deployment object.
-  deployment.deploy(mysql);
-  deployment.deploy(lobsters);
+  mysql.deploy(deployment);
+  lobsters.deploy(deployment);
 };
