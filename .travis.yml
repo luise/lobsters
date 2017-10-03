@@ -13,7 +13,7 @@ before_script:
 
 script:
     - gulp lint
-    - ./quilt inspect ./lobsters-example.js graphviz
+    - ./quilt inspect ./lobstersExample.js graphviz
 
 notifications:
     slack:
