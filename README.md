@@ -1,2 +1,2 @@
 # lobsters
-Quilt spec and Dockerfile for lobste.rs
+Kelda spec and Dockerfile for lobste.rs

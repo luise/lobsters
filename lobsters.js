@@ -1,7 +1,7 @@
 // Contains functionality to deploy Lobsters. See lobsters-example.js for
 // an example of how to use this file.
 
-const { Container, publicInternet } = require('@quilt/quilt');
+const { Container, publicInternet } = require('kelda');
 
 exports.deploy = function deploy(deployment, sqlRootPassword) {
   // Create a container for mysql.
@@ -14,7 +14,7 @@ exports.deploy = function deploy(deployment, sqlRootPassword) {
   });
 
   // Create a container for lobste.rs and configure it.
-  const lobsters = new Container('lobsters', 'quilt/lobsters', {
+  const lobsters = new Container('lobsters', 'keldaio/lobsters', {
     // Set the DATABASE_URL environment variable, which is how rails determines which database
     // to connect to.
     env: {
