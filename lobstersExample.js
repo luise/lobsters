@@ -4,9 +4,7 @@
 const { Infrastructure, Machine } = require('kelda');
 const lobsters = require('./lobsters.js');
 
-// To use this example, change this to your RSA public key.
-const sshPublicKey = 'pubKey';
-const baseMachine = new Machine({ provider: 'Amazon', sshKeys: [`ssh-rsa ${sshPublicKey}`] });
+const baseMachine = new Machine({ provider: 'Amazon' });
 
 const infra = new Infrastructure(baseMachine, baseMachine);
 
