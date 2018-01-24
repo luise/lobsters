@@ -1,7 +1,7 @@
 // Contains functionality to deploy Lobsters. See lobsters-example.js for
 // an example of how to use this file.
 
-const { Container, publicInternet } = require('kelda');
+const { Container, publicInternet, allowTraffic } = require('kelda');
 
 exports.deploy = function deploy(deployment, sqlRootPassword) {
   // Create a container for mysql.
@@ -24,10 +24,10 @@ exports.deploy = function deploy(deployment, sqlRootPassword) {
   });
 
   // Allow inbound connections to SQL at 3306 (the default SQL port).
-  mysql.allowFrom(lobsters, 3306);
+  allowTraffic(lobsters, mysql, 3306);
 
   // Allow inbound connections to the lobsters UI.
-  lobsters.allowFrom(publicInternet, 3000);
+  allowTraffic(publicInternet, lobsters, 3000);
 
   // Deploy lobste.rs and mysql using the given deployment object.
   mysql.deploy(deployment);
