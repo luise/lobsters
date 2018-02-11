@@ -5,7 +5,9 @@ const { Container, publicInternet, allowTraffic } = require('kelda');
 
 exports.deploy = function deploy(deployment, sqlRootPassword) {
   // Create a container for mysql.
-  const mysql = new Container('mysql', 'mysql:5.6.32', {
+  const mysql = new Container({
+    name: 'mysql',
+    image: 'mysql:5.6.32',
     // Set SQL environment variables to initialize the root password and a
     // lobsters user.
     env: {
@@ -14,7 +16,9 @@ exports.deploy = function deploy(deployment, sqlRootPassword) {
   });
 
   // Create a container for lobste.rs and configure it.
-  const lobsters = new Container('lobsters', 'keldaio/lobsters', {
+  const lobsters = new Container({
+    name: 'lobsters',
+    image: 'keldaio/lobsters',
     // Set the DATABASE_URL environment variable, which is how rails determines which database
     // to connect to.
     env: {

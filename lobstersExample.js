@@ -6,7 +6,10 @@ const lobsters = require('./lobsters.js');
 
 const baseMachine = new Machine({ provider: 'Amazon' });
 
-const infra = new Infrastructure(baseMachine, baseMachine);
+const infra = new Infrastructure({
+  masters: baseMachine,
+  workers: baseMachine,
+});
 
 // Deploy lobsters with "mysqlRootPassword" as the SQL root password.
 // In the future, Kelda will have improved functionality for secrets.
